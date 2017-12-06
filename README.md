@@ -20,5 +20,11 @@ $ docker run -dt -p 80:80 test_nuxt_auth
 # 在本地测试，npm run dev即可，本地跑起来是没问题
 # 线上环境，使用docker部署，docker里面有执行npm run generate，然后把生成的文件放到nginx里面去，这种情况会出问题
 
+# 参考链接：https://github.com/nuxt/nuxt.js/issues/1248
+https://github.com/nuxt/nuxt.js/issues/1214
+https://github.com/nuxt/nuxt.js/blob/dev/examples/no-ssr/pages/index.vue
+https://trello.com/b/lgy93IOl/nuxtjs-10
+http://www.zhangxinxu.com/wordpress/2012/05/w3c-dom-domexception-object/
+
 ```
 
