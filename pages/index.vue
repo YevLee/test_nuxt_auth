@@ -1,30 +1,28 @@
 <template>
   <section class="container">
-    <div>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <nuxt-link v-if="!logined" to="/login">登录</nuxt-link>
-      <div v-if="logined">
-        {{ userInfo.phone }}
-        <img :src="userInfo.imgUrl" />
-        <br />
-        <nuxt-link to="/profile">个人页面</nuxt-link>
-        <span @click="logout">
-          退出
-        </span>
+    <no-ssr placeholder="Loading">
+      <div>
+        <h2 class="subtitle">
+          Nuxt.js project
+        </h2>
+        <nuxt-link v-if="!logined" to="/login">登录</nuxt-link>
+        <div v-if="logined">
+          {{ userInfo.phone }}
+          <img :src="userInfo.imgUrl" />
+          <br />
+          <nuxt-link to="/profile">个人页面</nuxt-link>
+          <span @click="logout">
+            退出
+          </span>
+        </div>
       </div>
-    </div>
+    </no-ssr>
   </section>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
 import { mapState, mapGetters } from 'vuex'
 export default {
-  components: {
-    Logo
-  },
   computed: {
     ...mapState({
       userInfo: state => state.auth.user
